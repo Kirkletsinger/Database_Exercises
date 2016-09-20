@@ -49,72 +49,72 @@
 		<dict>
 			<key>connectionEncoding</key>
 			<string>utf8</string>
+			<key>contentFilter</key>
+			<dict/>
 			<key>contentPageNumber</key>
 			<integer>1</integer>
 			<key>contentSelection</key>
 			<data>
-			YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFy
-			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDA0VSRudWxs0wkK
-			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
-			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
-			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
-			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
-			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
-			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClZlbXBfbm/SHh8tLl8Q
-			D05TTXV0YWJsZVN0cmluZ6MtLyNYTlNTdHJpbmfSHh8xMl5OU011
-			dGFibGVBcnJheaMxMyNXTlNBcnJhedIeHyI1oiIjXxAPTlNLZXll
-			ZEFyY2hpdmVy0Tg5VGRhdGGAAQAIABEAGgAjAC0AMgA3AEUASwBS
-			AFoAZQBsAHAAcgB0AHYAegB8AH4AgACCAIcAjACRALoAwQDCAMMA
-			xQDKANUA3gD0APgBBQEOARMBFQEXARkBHgEoASoBMQE2AUgBTAFV
-			AVoBaQFtAXUBegF9AY8BkgGXAAAAAAAAAgEAAAAAAAAAOgAAAAAA
-			AAAAAAAAAAAAAZk=
+			YnBsaXN0MDDUAQIDBAUGPj9YJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK8QDwcIFRYXGBkdJCouMjU4PFUkbnVs
+			bNMJCgsMEBRXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6MNDg+A
+			AoADgASjERITgAWABoAIgA5UdHlwZVRyb3dzVGtleXNfECZTZWxl
+			Y3Rpb25EZXRhaWxUeXBlUHJpbWFyeUtleWVkRGV0YWlsc9MJCgsa
+			GxygoIAH0h4fICFaJGNsYXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0
+			YWJsZURpY3Rpb25hcnmjICIjXE5TRGljdGlvbmFyeVhOU09iamVj
+			dNIKCyUpoyYnKIAJgAuADIAN0gsrLC1ZTlMuc3RyaW5ngApWZW1w
+			X25v0h4fLzBfEA9OU011dGFibGVTdHJpbmejLzEjWE5TU3RyaW5n
+			0gsrLDSAClV0aXRsZdILKyw3gApZZnJvbV9kYXRl0h4fOTpeTlNN
+			dXRhYmxlQXJyYXmjOTsjV05TQXJyYXnSHh8iPaIiI18QD05TS2V5
+			ZWRBcmNoaXZlctFAQVRkYXRhgAEACAARABoAIwAtADIANwBJAE8A
+			VgBeAGkAcAB0AHYAeAB6AH4AgACCAIQAhgCLAJAAlQC+AMUAxgDH
+			AMkAzgDZAOIA+AD8AQkBEgEXARsBHQEfASEBIwEoATIBNAE7AUAB
+			UgFWAV8BZAFmAWwBcQFzAX0BggGRAZUBnQGiAaUBtwG6Ab8AAAAA
+			AAACAQAAAAAAAABCAAAAAAAAAAAAAAAAAAABwQ==
 			</data>
 			<key>contentSortColIsAsc</key>
 			<true/>
 			<key>contentViewport</key>
-			<string>{{0, 0}, {694, 450}}</string>
+			<string>{{0, 0}, {733, 475}}</string>
 			<key>isToolbarVisible</key>
 			<true/>
 			<key>queries</key>
-			<string>SELECT * FROM employees
+			<string>SELECT distinct title
 
-WHERE gender = 'M'
+FROM titles
 
-and (first_name = 'Irena'
- 
-or first_name = 'Vidya'
-
-or first_name = 'Maya')
-
-order by last_name ASC;
-
-
+ORDER by title asc;
 
 
 
 SELECT * FROM employees
 
-WHERE last_name LIKE 'E%'
+where last_name LIKE 'E%E'
 
-or last_name like '%e'
+GROUP by last_name, first_name
 
-order by emp_no DESC;
-
+ORDER by last_name;
 
 
 SELECT * FROM employees
 
-where hire_date between '1990-01-01' and '1999-12-31'
+WHERE last_name NOT LIKE '%qu%'
 
-and birth_date like '%-12-25'
+AND last_name LIKE '%q%'
 
-order by birth_date ASC, hire_date DESC;
+GROUP by last_name;
+
+
+
+
+
+
 
 
 
 </string>
 			<key>table</key>
-			<string>employees</string>
+			<string>titles</string>
 			<key>view</key>
 			<string>SP_VIEW_CUSTOMQUERY</string>
 			<key>windowVerticalDividerPosition</key>
@@ -129,6 +129,72 @@ order by birth_date ASC, hire_date DESC;
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>SELECT * FROM employees
+
+where last_name LIKE 'E%E'
+
+GROUP by last_name, first_name
+
+ORDER by last_name</string>
+		<string>SELECT * FROM employees
+
+WHERE last_name NOT LIKE '%qu%'
+
+AND last_name LIKE '%q%'
+
+GROUP by last_name</string>
+		<string>SELECT distinct title
+
+FROM titles
+
+ORDER by title asc</string>
+		<string>SELECT * FROM employees
+
+where last_name LIKE 'E%E'
+
+GROUP by last_name, first_name
+
+ORDER BY last_name</string>
+		<string>SELECT * FROM employees
+
+WHERE last_name NOT LIKE '%qu%'
+
+AND last_name LIKE '%q%'
+
+GROUP BY last_name</string>
+		<string>SELECT emp_no, first_name, last_name, hire_date
+
+FROM employees
+
+where last_name LIKE 'E%E'
+
+GROUP by last_name, first_name
+
+ORDER BY last_name</string>
+		<string>SELECT DISTINCT titles
+
+FROM titles
+
+SELECT * FROM `employees`
+
+WHERE last_name LIKE 'E&amp;E'
+
+GROUP BY last_name, first_name
+
+ORDER BY last_name</string>
+		<string>SELECT * FROM `employees`
+
+WHERE last_name LIKE 'E&amp;E'
+
+GROUP BY last_name, first</string>
+		<string>SELECT DISTINCT titles
+
+FROM titles</string>
+		<string>SELECT DISTINCT titles
+
+FROM titles
+
+SELECT * FROM `employees`</string>
 		<string>SELECT emp_no, last_name, first_name, birth_date, hire_date
 
 from employees
@@ -193,9 +259,6 @@ AND (
 		<string>SELECT * FROM employees WHERE first_name OR ('Irena','Vindya','Maya')</string>
 		<string>SELECT * FROM employees WHERE last_name LIKE '%q%'</string>
 		<string>SELECT *FROM employees WHERE hire_date BETWEEN '1990_01_01' AND '1999_01_01'</string>
-		<string>SELECT * FROM employees WHERE last_name LIKE '%E%'</string>
-		<string>SELECT * FROM employees WHERE first_name IN 'Irena','Vindya','Maya'</string>
-		<string>SELECT * FROM employees WHERE first_name IN 'Irena'</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>
