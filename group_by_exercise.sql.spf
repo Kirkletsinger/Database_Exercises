@@ -79,32 +79,10 @@
 			<key>isToolbarVisible</key>
 			<true/>
 			<key>queries</key>
-			<string>SELECT distinct title
-
-FROM titles
-
-ORDER by title asc;
-
-
-
-SELECT * FROM employees
-
-where last_name LIKE 'E%E'
-
-GROUP by last_name, first_name
-
-ORDER by last_name;
-
-
-SELECT * FROM employees
-
-WHERE last_name NOT LIKE '%qu%'
-
-AND last_name LIKE '%q%'
-
-GROUP by last_name;
-
-
+			<string>SELECT COUNT(*) , gender FROM emloyees
+WHERE first_name IN (Irena,Vidya,maya)
+GROUP BY gender
+ORDER BY gender ASC;
 
 
 
@@ -131,11 +109,67 @@ GROUP by last_name;
 	<array>
 		<string>SELECT * FROM employees
 
-where last_name LIKE 'E%E'
+WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
 
-GROUP by last_name, first_name
+AND birth_date LIKE '%-12-25'
 
-ORDER by last_name</string>
+ORDER BY birth_date ASC, hire_date DESC
+
+LIMIT 5 OFFSET 45</string>
+		<string>SELECT emp_no, last_name, first_name, birth_date, hire_date
+from employees
+where hire_date between '1990-01-01' and '1999-12-31'
+and birth_date like '%-12-25'
+order by birth_date asc, hire_date desc
+LIMIT 5 OFFSET 45</string>
+		<string>SELECT * FROM employees 
+
+WHERE hire_date BETWEEN  '1900-01-01' AND '1999-12-31'
+
+AND birth_date LIKE '&amp;-12-25'
+
+ORDER BY birth_date ASC, hire_date DESC
+
+LIMIT 5 OFFSET 45</string>
+		<string>SELECT * FROM employees 
+
+WHERE hire_date BETWEEN  '1900-01-01' AND '1999-12-31'
+
+AND birth_date LIKE '&amp;-12-25'
+
+ORDER BY birth_date ASC, hire_date DESC
+
+LIMIT 5 OFFSET 50</string>
+		<string>SELECT * FROM employees
+
+WHERE hire_date BETWEEN '1990-01-01' AND '1999-12-31'
+
+AND birth_date LIKE '%-12-25'
+
+ORDER BY birth_date ASC, hire_date DESC
+
+LIMIT 5</string>
+		<string>SELECT * FROM employees
+where hire_date between '1990-01-01' and '1999-12-31'
+and birth_date like '%-12-25'
+order by birth_date asc, hire_date desc
+LIMIT 5</string>
+		<string>SELECT * FROM employees
+
+GROUP BY last_name
+
+ORDER by last_name DESC
+
+LIMIT 10</string>
+		<string>SELECT emp_no, first_name, last_name, gender
+
+FROM employees
+
+GROUP BY last_name
+
+ORDER by last_name DESC
+
+LIMIT 10</string>
 		<string>SELECT * FROM employees
 
 WHERE last_name NOT LIKE '%qu%'
@@ -148,6 +182,13 @@ GROUP by last_name</string>
 FROM titles
 
 ORDER by title asc</string>
+		<string>SELECT * FROM employees
+
+where last_name LIKE 'E%E'
+
+GROUP by last_name, first_name
+
+ORDER by last_name</string>
 		<string>SELECT * FROM employees
 
 where last_name LIKE 'E%E'
@@ -217,48 +258,6 @@ or first_name = 'Vidya'
 or first_name = 'Maya')
 
 order by last_name ASC</string>
-		<string>SELECT emp_no, birth_date, first_name, last_name, gender, hire_date
-
-FROM employees
-
-WHERE gender = 'M'
-
-and (first_name = 'Irena'
-
-or first_name = 'Vidya'
-
-or first_name = 'Maya')
-
-order by last_name ASC</string>
-		<string>SELECT emp_no, last_name first_name
-
-FROM employees
-
-WHERE last_name LIKE 'E%'
-
-or last_name like '%e'
-
-order by emp_no DESC</string>
-		<string>SELECT emp_no, birth_date, first_name, last_name, gender, hire_date
-
-FROM employees
-
-WHERE gender = 'M'
-
-AND (
-
-	first_name = 'Irena'
-
-	OR first_name = 'Vidya'
-
-	OR first_name = 'Maya'
-
-)</string>
-		<string>SELECT * FROM employees WHERE last_name LIKE '%E'</string>
-		<string>SELECT * FROM employees WHERE last_name AND '%E'</string>
-		<string>SELECT * FROM employees WHERE first_name OR ('Irena','Vindya','Maya')</string>
-		<string>SELECT * FROM employees WHERE last_name LIKE '%q%'</string>
-		<string>SELECT *FROM employees WHERE hire_date BETWEEN '1990_01_01' AND '1999_01_01'</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>
